@@ -2,8 +2,12 @@ import streamlit as st
 import pandas as pd
 import yfinance as yf
 import plotly.express as px
+from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(page_title="Investment Tracker", layout="wide")
+
+# 🔁 Auto-refresh every 60 seconds
+st_autorefresh(interval=60 * 1000, key="refresh_timer")
 
 st.title("📊 Investment Portfolio Dashboard")
 
